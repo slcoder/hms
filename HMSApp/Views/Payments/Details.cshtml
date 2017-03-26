@@ -1,0 +1,73 @@
+@model HMSApp.Models.Payments
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payments</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.PayCode)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registration.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorFee)
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescriptionFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescriptionFee)
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckupFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckupFee)
+        <dt>
+            @Html.DisplayNameFor(model => model.HospitalFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HospitalFee)
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						PayCode = Model.PayCode 
+ 						}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 

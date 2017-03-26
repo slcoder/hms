@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2 style="text-align:center">Home</h2>
+<div>
+    <table style="width:100%;height:100%;padding:10px 10px 10px 10px">
+        <tr>
+            <td colspan="2"><p class="h1" style="text-align:center">Hospital Management System</p></td>
+        </tr>
+        <tr>
+            <td style="width:50%;padding:10px 10px 10px 300px">
+                @Html.ActionLink("Registration", "Index", "Registration", null, new { @class = "btn btn-primary btn-lg" })
+            </td>
+            <td style="width:50%;padding:10px 10px 10px 100px">
+                @Html.ActionLink("Check_up", "Index", "Check_up", null, new { @class = "btn btn-primary btn-lg" })
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%;padding:10px 10px 10px 300px">
+                @Html.ActionLink("Doctors", "Index", "Doctors", null, new { @class = "btn btn-primary btn-lg" })
+            </td>
+            <td style="width:50%;padding:10px 10px 10px 100px">
+                @Html.ActionLink("Payments", "Index", "Payments", null, new { @class = "btn btn-primary btn-lg" })
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%;padding:10px 10px 10px 300px">
+                @Html.ActionLink("Prescription", "Index", "Prescription", null, new { @class = "btn btn-primary btn-lg" })
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+
+</div>
+

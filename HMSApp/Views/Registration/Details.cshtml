@@ -1,0 +1,91 @@
+@model HMSApp.Models.Registration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Registration</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.PatientID)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        <dt>
+            @Html.DisplayNameFor(model => model.NIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIC)
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        <dt>
+            @Html.DisplayNameFor(model => model.Habits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Habits)
+        <dt>
+            @Html.DisplayNameFor(model => model.Allergic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allergic)
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						PatientID = Model.PatientID 
+ 						}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 

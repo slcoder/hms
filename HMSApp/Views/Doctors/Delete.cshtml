@@ -1,0 +1,77 @@
+@model HMSApp.Models.Doctors
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Doctors</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.DoctorID)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecializedArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecializedArea)
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital)
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultantDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultantDay)
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        <dt>
+            @Html.DisplayNameFor(model => model.ChannelingFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChannelingFee)
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+ 

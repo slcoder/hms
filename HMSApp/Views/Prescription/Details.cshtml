@@ -1,0 +1,75 @@
+@model HMSApp.Models.Prescription
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prescription</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.MediID)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctors.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registration.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MediName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediName)
+        <dt>
+            @Html.DisplayNameFor(model => model.Dosage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dosage)
+        <dt>
+            @Html.DisplayNameFor(model => model.TimePeriod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimePeriod)
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDays)
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPayment)
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						MediID = Model.MediID 
+ 						}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 

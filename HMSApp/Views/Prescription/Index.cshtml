@@ -1,0 +1,131 @@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<HMSApp.Models.Prescription>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Prescription</h2>
+
+@using (Html.BeginForm("Index", "Prescription", FormMethod.Get))
+{
+    <table class="table">
+        <tr>
+            <td align="left">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td align="center">
+                @Html.DropDownList("SearchField", (IEnumerable<SelectListItem>)ViewData["SearchFields"], new {style = "width:150px;height:33px"})
+                @Html.DropDownList("SearchCondition", (IEnumerable<SelectListItem>)ViewData["SearchConditions"], new { style = "width:150px;height:33px" })
+                @Html.TextBox("SearchText", ViewData["SearchText"] as String, new { style = "width:100px;height:33px" })
+                <input type="submit" value="Search" name="command" class="btn btn-default" />
+                <input type="submit" value="Show All" name="command" class="btn btn-default" /> 
+            </td>
+            <td>&nbsp;</td>
+            <td align="right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="left">
+                @Html.DropDownList("Export", (IEnumerable<SelectListItem>)ViewData["Exports"], new { style = "width:65px;height:33px" })
+                <input type="submit" value="Export" name="command" class="btn btn-default" />
+            </td>
+            <td>&nbsp;</td>
+            <td align="center">                
+                <input type="submit" value="Add New Record" name="command" class="btn btn-default" />
+            </td>
+            <td>&nbsp;</td>
+            <td align="right">
+                @Html.DropDownList("PageSize", (IEnumerable<SelectListItem>)ViewData["PageSizes"], new { style = "width:50px;height:33px" })
+                <input type="submit" value="Page Size" name="command" class="btn btn-default" />
+            </td>
+        </tr>
+    </table>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Medi I D", "Index", new { sortOrder = ViewData["MediIDSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Doctor I D", "Index", new { sortOrder = ViewData["DoctorIDSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Patient I D", "Index", new { sortOrder = ViewData["PatientIDSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Medi Name", "Index", new { sortOrder = ViewData["MediNameSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Dosage", "Index", new { sortOrder = ViewData["DosageSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Time Period", "Index", new { sortOrder = ViewData["TimePeriodSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("No Of Days", "Index", new { sortOrder = ViewData["NoOfDaysSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Total Payment", "Index", new { sortOrder = ViewData["TotalPaymentSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th>
+            @Html.ActionLink("Date", "Index", new { sortOrder = ViewData["DateSortParm"], SearchText = ViewData["SearchText"] })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MediID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctors.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MediName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dosage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimePeriod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						MediID = item.MediID 
+ 						}) |
+            @Html.ActionLink("Details", "Details", new {
+ 						MediID = item.MediID 
+ 						}) |
+            @Html.ActionLink("Delete", "Delete", new {
+ 						MediID = item.MediID 
+ 						})
+        </td>
+    </tr>
+}
+
+</table>
+
+<table class="table">
+    <tr>
+        <td align="center">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewData["CurrentSort"], SearchText = ViewData["SearchText"] }))
+        </td>
+    </tr>
+</table>
+
+ 

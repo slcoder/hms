@@ -1,0 +1,55 @@
+@model HMSApp.Models.Check_up
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Check_up</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.TestID)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registration.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestName)
+        <dt>
+            @Html.DisplayNameFor(model => model.OIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OIC)
+        <dt>
+            @Html.DisplayNameFor(model => model.Charges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charges)
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						TestID = Model.TestID 
+ 						}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 

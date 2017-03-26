@@ -1,0 +1,73 @@
+@model HMSApp.Models.Doctors
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Doctors</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.DoctorID)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecializedArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecializedArea)
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital)
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultantDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultantDay)
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        <dt>
+            @Html.DisplayNameFor(model => model.ChannelingFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChannelingFee)
+    </dl>
+</div>
+<p>
+            @Html.ActionLink("Edit", "Edit", new {
+ 						DoctorID = Model.DoctorID 
+ 						}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ 
