@@ -1,5 +1,6 @@
 namespace HMSApp.Migrations
 {
+    using HMSApp.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,15 @@ namespace HMSApp.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            User user=new User(){
+                FirstName = "Admin User",
+                UserName="Admin",
+                Password="password"
+            };
+            context.Users.AddOrUpdate(user  );
+
+            context.SaveChanges();
         }
     }
 }

@@ -35,12 +35,22 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Check_up", "Index", "Check_up", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Check up", "Index", "Check_up", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Doctors", "Index", "Doctors", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Payments", "Index", "Payments", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Prescription", "Index", "Prescription", null, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Registration", "Index", "Registration", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Patients", "Index", "Registration", null, new { @class = "navbar-brand" })</li>
+
+                    
                 </ul>
+               
+                @if (Session["UserSession"] != null)
+                {
+                    var loggedUser = Session["UserSession"] as HMSApp.Models.User;
+                    
+                    <span style="float:right;color:#ffffff;margin:15px 0 0 0">Welcome @loggedUser.FirstName  @loggedUser.LastName</span>
+                }
+                
             </div>
         </div>
     </div>

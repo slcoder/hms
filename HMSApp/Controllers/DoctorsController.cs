@@ -32,6 +32,11 @@ namespace HMSApp.Controllers
                                   string command)
         {
 
+            if (Session["UserSession"] == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             if (command == "Show All") {
                 SearchField = null;
                 SearchCondition = null;

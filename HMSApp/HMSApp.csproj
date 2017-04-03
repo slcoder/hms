@@ -186,6 +186,7 @@
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\PrescriptionController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +198,10 @@
     <Compile Include="Migrations\201703261639423_initialCreate2.Designer.cs">
       <DependentUpon>201703261639423_initialCreate2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703271619071_initials4.cs" />
+    <Compile Include="Migrations\201703271619071_initials4.Designer.cs">
+      <DependentUpon>201703271619071_initials4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Check_up.cs" />
     <Compile Include="Models\Doctors.cs" />
@@ -205,6 +210,7 @@
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\HMSDBDb.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Library\PDFform.cs" />
@@ -280,6 +286,7 @@
     <Content Include="Views\Registration\Details.cshtml" />
     <Content Include="Views\Registration\Edit.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703261639423_initialCreate2.resx">
       <DependentUpon>201703261639423_initialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703271619071_initials4.resx">
+      <DependentUpon>201703271619071_initials4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

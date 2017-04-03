@@ -16,6 +16,7 @@ namespace HMSApp.Models
             modelBuilder.Entity<Prescription>().ToTable("Prescription");
             modelBuilder.Entity<Registration>().ToTable("Registration");
             modelBuilder.Entity<Gender>().ToTable("Gender");
+            modelBuilder.Entity<User>().ToTable("Users");
         }
 
         public DbSet<Check_up> Check_up { get; set; }
@@ -29,6 +30,7 @@ namespace HMSApp.Models
         public DbSet<Registration> Registration { get; set; }
 
         public DbSet<Gender> Gender { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

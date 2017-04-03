@@ -10,6 +10,11 @@ namespace HMSApp.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["UserSession"] == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             return View();
         }
 
